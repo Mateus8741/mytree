@@ -1,9 +1,28 @@
+import { Header } from '@/components/header'
+import { Input } from '@/components/input'
+
 export default function LoginScreen() {
   return (
-    <main className="flex justify-center h-screen items-center p-12 bg-orange-400">
-      <h1>Mateus Tavares</h1>
+    <main className="flex flex-col h-screen bg-white">
+      <Header />
+      <div className="p-12 justify-center items-center flex flex-col">
+        <p className="text-4xl font-bold text-black">Bem vindo de volta!</p>
+        <p className="text-gray-500">Faça login para continuar</p>
 
-      <h2>Login screen</h2>
+        <div className="flex flex-col mt-8 w-96">
+          <Input
+            label="E-mail"
+            placeholder="Email"
+            errorMessages="Formulário errado"
+          />
+          <Input
+            label="Senha"
+            placeholder="Senha"
+            type="password"
+            errorMessages="Senha incorreta"
+          />
+        </div>
+      </div>
     </main>
   )
 }
