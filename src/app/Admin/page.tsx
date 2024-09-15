@@ -1,13 +1,40 @@
 'use client'
 
 import { Button } from '@/components/button'
-import { CardContent } from '@/components/cardContent'
+import { DraggableContext, type DragProps } from '@/components/draggableContext'
 import { LinkCard } from '@/components/linkCard'
+import type { DropResult } from '@hello-pangea/dnd'
 import { PlusIcon } from 'lucide-react'
 
 export default function Admin() {
   function handleAddLink() {
     console.log('Adicionar link')
+  }
+
+  function reorder(
+    list: DragProps['contentCardMap'],
+    startIndex: number,
+    endIndex: number,
+  ) {
+    const result = Array.from(list)
+    const [removed] = result.splice(startIndex, 1)
+    result.splice(endIndex, 0, removed)
+    return result
+  }
+
+  function handleDrag(data: DropResult) {
+    if (!data.destination) return
+
+    console.log(data.source.index)
+    console.log(data.destination?.index)
+
+    const reordered = reorder(
+      CARD_CONTENT,
+      data.source.index,
+      data.destination.index,
+    )
+
+    console.log(reordered)
   }
 
   return (
@@ -24,10 +51,9 @@ export default function Admin() {
           Adicionar link
         </Button>
 
-        <CardContent
-          nameContent="CodeWave Digital Solutions"
-          url="https://code-wave-lemon.vercel.app"
-          isChecked
+        <DraggableContext
+          onDragEnd={handleDrag}
+          contentCardMap={CARD_CONTENT}
         />
       </section>
 
@@ -42,3 +68,36 @@ export default function Admin() {
     </main>
   )
 }
+
+const CARD_CONTENT = [
+  {
+    id: 0,
+    nameContent: 'CodeWave Digital Solutions',
+    url: 'https://my.tree',
+    isChecked: true,
+  },
+  {
+    id: 1,
+    nameContent: 'Sei lá',
+    url: 'https://my.tree',
+    isChecked: true,
+  },
+  {
+    id: 2,
+    nameContent: 'Esse ai',
+    url: 'https://my.tree',
+    isChecked: true,
+  },
+  {
+    id: 3,
+    nameContent: 'POIs é',
+    url: 'https://my.tree',
+    isChecked: true,
+  },
+  {
+    id: 4,
+    nameContent: 'Aquele',
+    url: 'https://my.tree',
+    isChecked: true,
+  },
+]
