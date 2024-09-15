@@ -57,7 +57,7 @@ export default function LoginScreen() {
       <div className="flex gap-1 items-center">
         <AdjacentLinks link="/ForgotPassword" tittle="Esqueceu sua senha?" />
         <div className="mt-8 text-2xl text-green-600">&bull;</div>
-        <AdjacentLinks link="#" tittle="Esqueceu seu usuário?" />
+        <AdjacentLinks link="/ForgotUsername" tittle="Esqueceu seu usuário?" />
       </div>
 
       <div className="flex items-center gap-1">
