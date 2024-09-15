@@ -2,10 +2,10 @@ import { cn } from '@/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { TreePalm } from 'lucide-react'
 
-const logoVariants = cva('flex items-center font-bold', {
+const logoVariants = cva('flex font-bold text-7xl text-green-600', {
   variants: {
     variant: {
-      default: 'text-green-600',
+      default: 'flex font-bold text-7xl text-green-600',
     },
     size: {
       sm: 'text-4xl',
