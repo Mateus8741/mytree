@@ -1,5 +1,5 @@
 import { Draggable } from '@hello-pangea/dnd'
-import { Share, Trash2 } from 'lucide-react'
+import { GripVertical, Share, Trash2 } from 'lucide-react'
 import { Switch } from './switch'
 
 type CardContentProps = {
@@ -33,9 +33,13 @@ export function CardContent({
           {...provider.dragHandleProps}
         >
           <div className="flex justify-between items-center">
-            <div className="flex flex-col gap-3">
-              <p className="font-bold">{nameContent}</p>
-              <p className="font-light">{url}</p>
+            <div className="flex items-center gap-3">
+              <GripVertical className="size-6 -ml-4 text-black cursor-grabbing" />
+
+              <div className="flex flex-col gap-3">
+                <p className="font-bold">{nameContent}</p>
+                <p className="font-light">{url}</p>
+              </div>
             </div>
 
             <div className="flex flex-col items-center gap-4">
