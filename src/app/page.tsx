@@ -1,5 +1,6 @@
 'use client'
 
+import { AdjacentLinks } from '@/components/adjacentLinks'
 import { Button } from '@/components/button'
 import { FormTextInput } from '@/components/Form/formInput'
 import { Logo } from '@/components/logo'
@@ -22,6 +23,10 @@ export default function LoginScreen() {
   function onSubmit(data: LoginScheema) {
     console.log(data)
   }
+
+  const forgotPasswordLink = '#'
+  const forgotUsernameLink = '#'
+  const signUpLink = '#'
 
   return (
     <main className="flex flex-col items-center justify-center h-screen">
@@ -52,6 +57,21 @@ export default function LoginScreen() {
           Entrar
         </Button>
       </form>
+
+      <div className="flex gap-1 items-center">
+        <AdjacentLinks link={forgotPasswordLink} tittle="Esqueceu sua senha?" />
+        <div className="mt-8 text-2xl text-green-600">&bull;</div>
+        <AdjacentLinks
+          link={forgotUsernameLink}
+          tittle="Esqueceu seu usuário?"
+        />
+      </div>
+
+      <div className="flex items-center gap-1">
+        <p className="text-gray-500 mt-8">Não tem uma conta?</p>
+
+        <AdjacentLinks link={signUpLink} tittle="Cadastre-se" />
+      </div>
     </main>
   )
 }
