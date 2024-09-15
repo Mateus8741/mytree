@@ -16,8 +16,11 @@ export default function Admin() {
       <section className="flex-1 ml-2 p-8">
         <LinkCard link="https://my.tree" />
 
-        <Button className="w-full p-6 mt-8" onClick={handleAddLink}>
-          <PlusIcon className="w-6 h-6 mr-2" />
+        <Button
+          className="w-full p-6 mt-8 text-white font-bold"
+          onClick={handleAddLink}
+        >
+          <PlusIcon className="size-6 mr-2" />
           Adicionar link
         </Button>
 
