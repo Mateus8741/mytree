@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function Home() {
+export default function Admin() {
   return (
     <main className="flex justify-center items-center p-12 bg-orange-400 sm:pb-12 lg:pb-12 xl:pb-12">
       <Image

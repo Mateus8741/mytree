@@ -37,14 +37,14 @@ export default function LoginScreen() {
           control={control}
           name="email"
           label="Email"
-          placeholder="Email"
+          placeholder="Digite seu e-mail"
         />
 
         <FormTextInput
           control={control}
           name="password"
           label="Senha"
-          placeholder="Senha"
+          placeholder="Digite sua senha"
           type="password"
         />
 
