@@ -1,6 +1,6 @@
 'use client'
 
-import { AsideNav } from '@/components/asideNav'
+import { ASIDE_OPTIONS, AsideNav } from '@/components/asideNav'
 import { usePathname } from 'next/navigation'
 
 export function RenderAside({
@@ -10,7 +10,16 @@ export function RenderAside({
 }>) {
   const route = usePathname()
 
-  if (route !== '/Admin') {
+  const excludedRoutes = [
+    '/',
+    '/ForgotPassword',
+    '/ForgotUsername',
+    '/RegisterUser',
+  ]
+
+  const isAside = ASIDE_OPTIONS.some((option) => option.href !== route)
+
+  if (!isAside || excludedRoutes.includes(route)) {
     return <>{children}</>
   }
 
