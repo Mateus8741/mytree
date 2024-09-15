@@ -1,12 +1,20 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { RenderAside } from './renderAside'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'My.Tree',
   description: 'Faça sua própria árvore de links',
+  publisher: 'CodeWave Digital Solutions',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  applicationName: 'My.Tree',
+  keywords: ['links', 'tree', 'my.tree'],
+  themeColor: '#16A34A',
 }
 
 export default function RootLayout({
@@ -16,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-gray-100`}>
+        <RenderAside>{children}</RenderAside>
+      </body>
     </html>
   )
 }
