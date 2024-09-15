@@ -4,13 +4,13 @@ import { AdjacentLinks } from '@/components/adjacentLinks'
 import { Button } from '@/components/button'
 import { FormTextInput } from '@/components/Form/formInput'
 import { Logo } from '@/components/logo'
-import { loginScheema, type LoginScheema } from '@/schema/loginSchema'
+import { loginSchema, type LoginSchema } from '@/schema/loginSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
 export default function LoginScreen() {
   const { control, handleSubmit } = useForm({
-    resolver: zodResolver(loginScheema),
+    resolver: zodResolver(loginSchema),
 
     defaultValues: {
       email: '',
@@ -20,7 +20,7 @@ export default function LoginScreen() {
     mode: 'onChange',
   })
 
-  function onSubmit(data: LoginScheema) {
+  function onSubmit(data: LoginSchema) {
     console.log(data)
   }
 
