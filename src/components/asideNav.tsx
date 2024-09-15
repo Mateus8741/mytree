@@ -3,11 +3,11 @@ import { BarChart2, Link as LinkIcon, Moon, Settings } from 'lucide-react'
 import Link from 'next/link'
 import { Logo } from './logo'
 
-const ASIDE_OPTIONS = [
-  { label: 'Links', href: '#', icon: LinkIcon },
+export const ASIDE_OPTIONS = [
+  { label: 'Links', href: '/Admin', icon: LinkIcon },
   { label: 'Aparência', href: '#', icon: Moon },
   { label: 'Análise', href: '#', icon: BarChart2 },
-  { label: 'Configurações', href: '#', icon: Settings },
+  { label: 'Configurações', href: '/Config', icon: Settings },
 ]
 
 export function AsideNav() {
