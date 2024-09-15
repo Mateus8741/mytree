@@ -24,10 +24,6 @@ export default function LoginScreen() {
     console.log(data)
   }
 
-  const forgotPasswordLink = '#'
-  const forgotUsernameLink = '#'
-  const signUpLink = '#'
-
   return (
     <main className="flex flex-col items-center justify-center h-screen">
       <Logo />
@@ -59,18 +55,15 @@ export default function LoginScreen() {
       </form>
 
       <div className="flex gap-1 items-center">
-        <AdjacentLinks link={forgotPasswordLink} tittle="Esqueceu sua senha?" />
+        <AdjacentLinks link="/ForgotPassword" tittle="Esqueceu sua senha?" />
         <div className="mt-8 text-2xl text-green-600">&bull;</div>
-        <AdjacentLinks
-          link={forgotUsernameLink}
-          tittle="Esqueceu seu usuário?"
-        />
+        <AdjacentLinks link="#" tittle="Esqueceu seu usuário?" />
       </div>
 
       <div className="flex items-center gap-1">
         <p className="text-gray-500 mt-8">Não tem uma conta?</p>
 
-        <AdjacentLinks link={signUpLink} tittle="Cadastre-se" />
+        <AdjacentLinks link="#" tittle="Cadastre-se" />
       </div>
     </main>
   )
