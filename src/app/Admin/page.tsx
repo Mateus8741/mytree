@@ -1,17 +1,31 @@
-import { AsideNav } from '@/components/asideNav'
+'use client'
+
+import { Button } from '@/components/button'
+import { CardContent } from '@/components/cardContent'
+import { LinkCard } from '@/components/linkCard'
+import { PlusIcon } from 'lucide-react'
 
 export default function Admin() {
+  function handleAddLink() {
+    console.log('Adicionar link')
+  }
+
   return (
     <main className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
-      <div className="flex items-center my-8 mx-2 rounded-3xl shadow-lg bg-white">
-        <AsideNav />
-      </div>
-
       {/* Main content */}
-      <section className="flex-1 ml-2 p-8 bg-orange-200">
-        <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
-        <p>Conteúdo da página...</p>
+      <section className="flex-1 ml-2 p-8">
+        <LinkCard link="https://my.tree" />
+
+        <Button className="w-full p-6 mt-8" onClick={handleAddLink}>
+          <PlusIcon className="w-6 h-6 mr-2" />
+          Adicionar link
+        </Button>
+
+        <CardContent
+          nameContent="CodeWave Digital Solutions"
+          url="https://code-wave-lemon.vercel.app"
+          isChecked
+        />
       </section>
 
       {/* Skeleton de um celular */}
