@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   },
   applicationName: 'My.Tree',
   keywords: ['links', 'tree', 'my.tree'],
-  themeColor: '#16A34A',
 }
 
 export default function RootLayout({
