@@ -41,7 +41,7 @@ export default function Admin() {
   return (
     <main className="flex h-screen bg-gray-100">
       <section className="flex-1 ml-2 p-8">
-        <LinkCard link="https://my.tree" />
+        <LinkCard link="CodeWaveDS" />
 
         <Button
           className="w-full p-6 mt-8 text-white font-bold"
