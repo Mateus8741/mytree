@@ -18,8 +18,9 @@ export function RenderAside({
   ]
 
   const isAside = ASIDE_OPTIONS.some((option) => option.href !== route)
+  const isDynamicExclude = route.startsWith('/MyLink/')
 
-  if (!isAside || excludedRoutes.includes(route)) {
+  if (!isAside || excludedRoutes.includes(route) || isDynamicExclude) {
     return <>{children}</>
   }
 
